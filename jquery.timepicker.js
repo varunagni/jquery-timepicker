@@ -597,12 +597,13 @@
 
 	function _generateNoneElement(optionValue, useSelect)
 	{
-		var label, className, value;
+		var label, className, value,listId;
 
 		if (typeof optionValue == 'object') {
 			label = optionValue.label;
 			className = optionValue.className;
 			value = optionValue.value;
+			listId = optionValue.listId;
 		} else if (typeof optionValue == 'string') {
 			label = optionValue;
 		} else {
@@ -618,7 +619,8 @@
 		} else {
 			return $('<li />', {
 					'class': className,
-					'text': label
+					'text': label,
+					'id':listId
 				}).data('time', value);
 		}
 	}
